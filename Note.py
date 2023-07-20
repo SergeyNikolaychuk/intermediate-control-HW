@@ -20,3 +20,16 @@ class NotebookShop:
         min_storage = int(input("Enter the minimum storage size (in GB): "))
 
         return [notebook for notebook in self.notebooks if notebook.ram >= min_ram and notebook.color.lower() == color.lower() and notebook.storage >= min_storage]
+
+notebooks = [
+    Notebook("Lenovo", "IdeaPad", 8, 512, "Windows", "Black"),
+    Notebook("Apple", "MacBook Pro", 16, 1024, "macOS", "Silver"),
+    Notebook("Dell", "XPS", 16, 512, "Windows", "White"),
+    Notebook("Asus", "ROG", 32, 1024, "Windows", "Black")
+]
+
+shop = NotebookShop(notebooks)
+filtered_notebooks = shop.filter_notebooks()
+
+for notebook in filtered_notebooks:
+    print(notebook)
